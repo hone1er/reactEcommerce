@@ -9,21 +9,18 @@ import { ItemContext } from "../components/Cards/ItemContext";
 
 export default function ProductPage(props) {
   const { items, addItem, handleDetail } = useContext(ItemContext);
-  // const reverseItems = itms => {
-    //   let newItems = [];
-    //   for (let i = itms.length - 1; i >= 0; i--) {
-      //     newItems.push(itms[i]);
-      //   }
-      //   return newItems;
-      // };
-      const hero = props.category === "pants" ? pantsHeroImage : image;
-      const subtitle = props.category === "tshirts" ? "totally rad t-shirts or something like that" : null;
-      const title = props.category === "tshirts" ? "T-Shirts" : null;
-      const itemList = items.filter((el) => el.category === props.category);
-      
-      return (
-        <div className="App">
-          
+
+// Set attributes based on props.category
+  const hero = props.category === "pants" ? pantsHeroImage : image;
+  const subtitle =
+    props.category === "tshirts"
+      ? "totally rad t-shirts or something like that"
+      : null;
+  const title = props.category === "tshirts" ? "T-Shirts" : null;
+  const itemList = items.filter((el) => el.category === props.category);
+
+  return (
+    <div className="App">
       <Hero
         image={hero}
         href={props.category}
@@ -33,12 +30,12 @@ export default function ProductPage(props) {
         theme={{ main: "black", secondary: "white" }}
         displayButton="false"
         className="bubble"
-        />
+      />
       <ItemList
         items={itemList}
         addItem={addItem}
         handleDetail={handleDetail}
-        />
+      />
       <Hero
         image={image2}
         href={props.category}
@@ -49,7 +46,7 @@ export default function ProductPage(props) {
         displayButton="true"
         buttonName="feeling lucky"
         alignment="center"
-        />
+      />
     </div>
   );
 }

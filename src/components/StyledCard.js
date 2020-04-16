@@ -12,7 +12,7 @@ const StyledCard = styled.div`
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.main};
+    color: black;
   }
 
   img {
