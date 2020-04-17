@@ -36,11 +36,53 @@ const Wrapper = styled.div`
   flex-flow: wrap;
   padding: 50px 20px;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 885px;
   margin: 0 auto;
+  &::after {
+    content: "";
+    flex: auto;
+  }
+@media (min-width: 1237px) {
+  max-width: 1180px;
+  }
+
+  @media (max-width: 942px) {
+    max-width: 590px;
+  }
 
   @media (max-width: 646px) {
     padding: 5px 0;
+    max-width: 560px;
     width: 100%;
   }
+
+  @media (max-width: 578px) {
+    max-width: 480px;
+    img {
+      max-height: 345px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0 0 .75vw;
+  }
+
+  @media (max-width: 460px) {
+    padding: 0;
+  }
+
+  @media (max-width: 339px) {
+
+    img{
+      height: auto;
+      max-height: unset;
+    }
+    .cardBox {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 45px;
+    }
+  }
+  
 `;
+

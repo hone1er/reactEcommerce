@@ -9,39 +9,33 @@ function Cart() {
   const { addItem, removeItem, items } = useContext(ItemContext);
   const [cart, setCart] = useState({ total: 0, qty: 0 });
 
-
-
   useEffect(() => {
+    const itemsInCart = items.filter((el) => {
+      return el.qty > 0;
+    });
+
     function totalQuantity() {
-      return items.filter((el) => {
-        return el.qty > 0;
-      }).length === 0
-        ? "0 items"
-        : getQuantity(items) === 1
-        ? `${getQuantity(items)} items`
-        : `${getQuantity(items)} item`;
+      return getQuantity(items) === 1
+        ? `${getQuantity(items)} item`
+        : `${getQuantity(items)} items`;
     }
 
     function getQuantity() {
-      return items
-        .filter((el) => {
-          return el.qty > 0;
-        })
-        .map((item) => {
-          return item.qty;
-        })
-        .reduce((acc, val) => {
-          return (acc += val);
-        });
+      if (itemsInCart.length) {
+        return itemsInCart
+          .map((item) => {
+            return item.qty;
+          })
+          .reduce((acc, val) => {
+            return (acc += val);
+          });
       }
+      return 0;
+    }
+
     const total =
-    items.filter((item) => {
-        return item.qty > 0;
-      }).length > 0
-        ? items
-        .filter((item) => {
-              return item.qty > 0;
-            })
+      itemsInCart.length > 0
+        ? itemsInCart
             .map((item) => {
               return item.price * item.qty;
             })
@@ -50,6 +44,7 @@ function Cart() {
             })
             .toFixed(2)
         : 0;
+
     setCart({ total: total, qty: totalQuantity() });
   }, [items]);
 

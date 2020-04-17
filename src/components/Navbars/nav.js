@@ -12,7 +12,7 @@ export default class NavMobile extends React.Component {
   render() {
     return (
       <>
-        <div theme={theme}>
+        <div>
           <NavOuter
             as="nav"
             className={this.state.toggle ? "nav-bar show-bar" : "nav-bar"}
@@ -90,7 +90,7 @@ export default class NavMobile extends React.Component {
               <Li onClick={this.Toggle} to="/products/pants">
                 pants
               </Li>
-              <Li onClick={this.Toggle} to="/sweatshirts">
+              <Li onClick={this.Toggle} to="/products/sweatshirt">
                 sweatshirts/hoodies
               </Li>
             </NavList>

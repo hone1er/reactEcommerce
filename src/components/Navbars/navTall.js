@@ -61,7 +61,7 @@ export default class Nav extends React.Component {
                   </StyledLink>
                 </li>
                 <li>
-                  <StyledLink onClick={this.Toggle} to="#">
+                  <StyledLink onClick={this.Toggle} to="/products/sweatshirt">
                     sweatshirts/hoodies
                   </StyledLink>
                 </li>

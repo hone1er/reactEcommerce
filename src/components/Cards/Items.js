@@ -9,6 +9,13 @@ import img8 from "./tshirts/ian-dooley-8HqPXTToMn0-unsplash.jpg";
 import pantsimg from "./pants/alicia-petresc-BciCcl8tjVU-unsplash.jpg";
 import pantsimg1 from "./pants/brian-wangenheim-Tg6rUjg6q8g-unsplash.jpg";
 import pantsimg2 from "./pants/ivan-bogdanov-17qC7l19hMI-unsplash.jpg";
+// import sweatshirtImg from "./sweatshirts/alex-ware-l0MNYcFg5wI-unsplash.jpg";
+import sweatshirtImg1 from "./sweatshirts/mohammed-hassan-TacgBR6o0TQ-unsplash.jpg";
+// import sweatshirtImg2 from "./sweatshirts/leon-macapagal-IsFF7pqNFLo-unsplash.jpg";
+import sweatshirtImg3 from "./sweatshirts/troy-t-chSaT-2pGFs-unsplash.jpg";
+import sweatshirtImg4 from "./sweatshirts/rico-cori-eIjEDkRzbOQ-unsplash.jpg";
+import sweatshirtImg5 from "./sweatshirts/shraddha-singh-iaUeG7vJw9s-unsplash.jpg";
+import sweatshirtImg6 from "./sweatshirts/sincerely-media-rI0OiRBx4ac-unsplash.jpg";
 
 import pantsimg3 from "./pants/silviu-beniamin-tofan-spqwdZXzduU-unsplash.jpg";
 export const storeItems = [
@@ -192,8 +199,79 @@ export const storeItems = [
     target: "https://www.jmvcode.com",
     id: 45524
   },
-
-
+  {
+    qty: 0,
+    stock: 10,
+    category: "sweatshirt",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "sweatshirt",
+    subtitle: "these are sweatshirt",
+    price: 21.99,
+    img: sweatshirtImg1,
+    target: "https://www.jmvcode.com",
+    id: 64416
+  },
+  {
+    qty: 0,
+    stock: 10,
+    category: "sweatshirt",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "sweatshirt",
+    subtitle: "these are sweatshirt",
+    price: 21.99,
+    img: sweatshirtImg3,
+    target: "https://www.jmvcode.com",
+    id: 648190
+  },{
+    qty: 0,
+    stock: 10,
+    category: "sweatshirt",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "sweatshirt",
+    subtitle: "these are sweatshirt",
+    price: 21.99,
+    img: sweatshirtImg4,
+    target: "https://www.jmvcode.com",
+    id: 648194
+  },
+  {
+    qty: 0,
+    stock: 10,
+    category: "sweatshirt",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "sweatshirt",
+    subtitle: "these are sweatshirt",
+    price: 21.99,
+    img: sweatshirtImg5,
+    target: "https://www.jmvcode.com",
+    id: 648191
+  },{
+    qty: 0,
+    stock: 10,
+    category: "sweatshirt",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "sweatshirt",
+    subtitle: "these are sweatshirt",
+    price: 21.99,
+    img: sweatshirtImg6,
+    target: "https://www.jmvcode.com",
+    id: 648192
+  },
 
 ];
 
