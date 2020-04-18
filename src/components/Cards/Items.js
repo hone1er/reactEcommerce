@@ -23,31 +23,27 @@ export const storeItems = [
     qty: 0,
     stock: 10,
     category: "tshirts",
-    description:
-      "",
+    description: "",
     total: 0,
     inCart: false,
     header: "Skeleton fist",
     subtitle: "Black/white unisex skeleton fist T",
     price: 20.99,
     img: img8,
-    target: "https://www.jmvcode.com",
-    id: 0
+    id: 0,
   },
   {
     qty: 0,
     stock: 10,
     category: "tshirts",
-    description:
-      "100% Cotton t-shirt. Made in Australia",
+    description: "100% Cotton t-shirt. Made in Australia",
     total: 0,
     inCart: false,
     header: "Bells beach",
     subtitle: "Tropical triangles 'Bells Beach' shirt",
     price: 10.99,
     img: image,
-    target: "https://www.jmvcode.com",
-    id: 1
+    id: 1,
   },
   {
     qty: 0,
@@ -61,8 +57,7 @@ export const storeItems = [
     subtitle: "another tshirts",
     price: 25.99,
     img: img3,
-    target: "https://www.jmvcode.com",
-    id: 2
+    id: 2,
   },
   {
     qty: 0,
@@ -76,8 +71,7 @@ export const storeItems = [
     subtitle: "these are tshirts",
     price: 21.99,
     img: img4,
-    target: "https://www.jmvcode.com",
-    id: 3
+    id: 3,
   },
   {
     qty: 0,
@@ -91,8 +85,7 @@ export const storeItems = [
     subtitle: "some tshirts",
     price: 18.99,
     img: img5,
-    target: "https://www.jmvcode.com",
-    id: 4
+    id: 4,
   },
   {
     qty: 0,
@@ -106,8 +99,7 @@ export const storeItems = [
     subtitle: "these are tshirts",
     price: 20.99,
     img: img6,
-    target: "https://www.jmvcode.com",
-    id: 5
+    id: 5,
   },
   {
     qty: 0,
@@ -121,8 +113,7 @@ export const storeItems = [
     subtitle: "Random tshirts",
     price: 20.99,
     img: img7,
-    target: "https://www.jmvcode.com",
-    id: 6
+    id: 6,
   },
   {
     qty: 0,
@@ -136,8 +127,7 @@ export const storeItems = [
     subtitle: "these are tshirts",
     price: 20.99,
     img: img2,
-    target: "https://www.jmvcode.com",
-    id: 7
+    id: 7,
   },
   {
     qty: 0,
@@ -151,8 +141,7 @@ export const storeItems = [
     subtitle: "these are pants",
     price: 20.99,
     img: pantsimg,
-    target: "https://www.jmvcode.com",
-    id: 1561
+    id: 1561,
   },
   {
     qty: 0,
@@ -166,8 +155,7 @@ export const storeItems = [
     subtitle: "this is a pants",
     price: 10.99,
     img: pantsimg1,
-    target: "https://www.jmvcode.com",
-    id: 846194
+    id: 846194,
   },
   {
     qty: 0,
@@ -181,8 +169,7 @@ export const storeItems = [
     subtitle: "another pants",
     price: 25.99,
     img: pantsimg2,
-    target: "https://www.jmvcode.com",
-    id: 184318
+    id: 184318,
   },
   {
     qty: 0,
@@ -196,13 +183,12 @@ export const storeItems = [
     subtitle: "these are pants",
     price: 21.99,
     img: pantsimg3,
-    target: "https://www.jmvcode.com",
-    id: 45524
+    id: 452524,
   },
   {
     qty: 0,
     stock: 10,
-    category: "sweatshirt",
+    category: "sweatshirts & hoodies",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     total: 0,
@@ -211,13 +197,12 @@ export const storeItems = [
     subtitle: "these are sweatshirt",
     price: 21.99,
     img: sweatshirtImg1,
-    target: "https://www.jmvcode.com",
-    id: 64416
+    id: 6446216,
   },
   {
     qty: 0,
     stock: 10,
-    category: "sweatshirt",
+    category: "sweatshirts & hoodies",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     total: 0,
@@ -226,12 +211,12 @@ export const storeItems = [
     subtitle: "these are sweatshirt",
     price: 21.99,
     img: sweatshirtImg3,
-    target: "https://www.jmvcode.com",
-    id: 648190
-  },{
+    id: 64845190,
+  },
+  {
     qty: 0,
     stock: 10,
-    category: "sweatshirt",
+    category: "sweatshirts & hoodies",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     total: 0,
@@ -240,13 +225,12 @@ export const storeItems = [
     subtitle: "these are sweatshirt",
     price: 21.99,
     img: sweatshirtImg4,
-    target: "https://www.jmvcode.com",
-    id: 648194
+    id: 64758194,
   },
   {
     qty: 0,
     stock: 10,
-    category: "sweatshirt",
+    category: "sweatshirts & hoodies",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     total: 0,
@@ -255,12 +239,12 @@ export const storeItems = [
     subtitle: "these are sweatshirt",
     price: 21.99,
     img: sweatshirtImg5,
-    target: "https://www.jmvcode.com",
-    id: 648191
-  },{
+    id: 64819411,
+  },
+  {
     qty: 0,
     stock: 10,
-    category: "sweatshirt",
+    category: "sweatshirts & hoodies",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     total: 0,
@@ -269,10 +253,65 @@ export const storeItems = [
     subtitle: "these are sweatshirt",
     price: 21.99,
     img: sweatshirtImg6,
-    target: "https://www.jmvcode.com",
-    id: 648192
+    id: 64568191,
   },
-
+  // new category
+  
+  {
+    qty: 0,
+    stock: 10,
+    category: "Shoes",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "shoes",
+    subtitle: "these are shoes",
+    price: 21.99,
+    img: sweatshirtImg4,
+    id: 6481944,
+  },
+  {
+    qty: 0,
+    stock: 10,
+    category: "Shoes",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "shoes",
+    subtitle: "these are shoes",
+    price: 21.99,
+    img: sweatshirtImg5,
+    id: 6848191,
+  },
+  {
+    qty: 0,
+    stock: 10,
+    category: "Shoes",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "shoes",
+    subtitle: "these are shoes",
+    price: 21.99,
+    img: sweatshirtImg6,
+    id: 6481491,
+  },{
+    qty: 0,
+    stock: 10,
+    category: "Longername",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    total: 0,
+    inCart: false,
+    header: "shoes",
+    subtitle: "these are shoes",
+    price: 21.99,
+    img: sweatshirtImg6,
+    id: 6481921,
+  },
 ];
 
 export const detailItems = {
@@ -285,6 +324,5 @@ export const detailItems = {
   subtitle: "these are tshirts",
   price: 20.99,
   img: img8,
-  target: "https://www.jmvcode.com",
-  id: 8
+  id: 8,
 };

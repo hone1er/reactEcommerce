@@ -1,104 +1,101 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
-export default class NavMobile extends React.Component {
-  state = {
-    toggle: false,
-  };
-  Toggle = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
-  render() {
+import { ItemContext } from "../Cards/ItemContext";
+import Dropdown from "./dropDown";
+export default function NavMobile() {
+  const [toggle, setToggle] = useState(false);
+  const { categories } = useContext(ItemContext);
+
+  const categoryList = categories.slice(0, 3).map((category) => {
+    const url = `/products/${category}`;
     return (
-      <>
-        <div>
-          <NavOuter
-            as="nav"
-            className={this.state.toggle ? "nav-bar show-bar" : "nav-bar"}
-          >
-            <LogoDiv>
+      <Li key={category} onClick={handleToggle} to={url}>
+        {category}
+      </Li>
+    );
+  });
+
+  function handleToggle() {
+    setToggle(!toggle);
+  }
+  return (
+    <>
+      <div>
+        <NavOuter as="nav" className={toggle ? "nav-bar show-bar" : "nav-bar"}>
+          <LogoDiv>
+            <Li
+              onClick={
+                toggle
+                  ? handleToggle
+                  : () => {
+                      return null;
+                    }
+              }
+              className="no-hover"
+              id="logo-link"
+              to="/"
+            >
+              <h1>logo</h1>
+            </Li>
+            <MenuDiv>
               <Li
+                className="no-hover"
+                to="/cart"
                 onClick={
-                  this.state.toggle
-                    ? this.Toggle
+                  toggle
+                    ? handleToggle
                     : () => {
                         return null;
                       }
                 }
-                className="no-hover"
-                id="logo-link"
-                to="/"
               >
-                <h1>logo</h1>
+                <TiShoppingCart />
               </Li>
-              <MenuDiv>
-                <Li
-                  className="no-hover"
-                  to="/cart"
-                  onClick={
-                    this.state.toggle
-                      ? this.Toggle
-                      : () => {
-                          return null;
-                        }
-                  }
-                >
-                  <TiShoppingCart />
-                </Li>
 
-                <Button
-                  onClick={this.Toggle}
-                  id="mainmenulabel"
-                  aria-haspopup="true"
-                  aria-owns="mainnavmenu"
-                  className="navigation-bar-slideout__menu-toggle js-navigation-bar-slideout__menu-toggle"
+              <Button
+                onClick={handleToggle}
+                id="mainmenulabel"
+                aria-haspopup="true"
+                aria-owns="mainnavmenu"
+                className="navigation-bar-slideout__menu-toggle js-navigation-bar-slideout__menu-toggle"
+              >
+                <span
+                  className="navigation-bar__menu-toggle-icon"
+                  aria-hidden="true"
                 >
-                  <span
-                    className="navigation-bar__menu-toggle-icon"
-                    aria-hidden="true"
+                  <svg
+                    width="22"
+                    height="21"
+                    viewBox="0 0 22 21"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      width="22"
-                      height="21"
-                      viewBox="0 0 22 21"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        className="navigation-bar__menu-toggle-svg"
-                        d="M1.335 12H22V9H.015v3h1.32zm0-9H22V0H.015v3h1.32zm0 18H22v-3H.015v3h1.32z"
-                        fillRule="evenodd"
-                      ></path>
-                      <g
-                        className="navigation-bar__menu-toggle-svg-close"
-                        fillRule="evenodd"
-                      ></g>
-                    </svg>
-                  </span>
-                </Button>
-              </MenuDiv>
-            </LogoDiv>
-            <NavList
-              className={this.state.toggle ? "nav-links show-nav" : "nav-links"}
-            >
-              <Li onClick={this.Toggle} to="/">
-                Home
-              </Li>
-              <Li onClick={this.Toggle} to="/products/tshirts">
-                t-shirts
-              </Li>
-              <Li onClick={this.Toggle} to="/products/pants">
-                pants
-              </Li>
-              <Li onClick={this.Toggle} to="/products/sweatshirt">
-                sweatshirts/hoodies
-              </Li>
-            </NavList>
-          </NavOuter>
-        </div>
-      </>
-    );
-  }
+                    <path
+                      className="navigation-bar__menu-toggle-svg"
+                      d="M1.335 12H22V9H.015v3h1.32zm0-9H22V0H.015v3h1.32zm0 18H22v-3H.015v3h1.32z"
+                      fillRule="evenodd"
+                    ></path>
+                    <g
+                      className="navigation-bar__menu-toggle-svg-close"
+                      fillRule="evenodd"
+                    ></g>
+                  </svg>
+                </span>
+              </Button>
+            </MenuDiv>
+          </LogoDiv>
+          <NavList className={toggle ? "nav-links show-nav" : "nav-links"}>
+            <Li onClick={handleToggle} to="/">
+              Home
+            </Li>
+            {categoryList}
+            <Dropdown main={["more...", "menuHref"]} />
+          </NavList>
+        </NavOuter>
+      </div>
+    </>
+  );
 }
 
 //  Theme Variables
@@ -167,6 +164,7 @@ const Li = styled(Link)`
   padding: 25px 0;
   font-size: 1.5em;
   text-decoration: none;
+  text-transform: capitalize;
   color: ${theme.secondary};
   &:hover {
     background: ${theme.secondary};

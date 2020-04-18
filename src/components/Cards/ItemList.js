@@ -3,11 +3,10 @@ import Card from "./Card";
 import styled from "styled-components";
 
 export default function ItemList(props) {
-
   return (
     <>
       <Wrapper>
-        {props.items.map(item => (
+        {props.items.map((item) => (
           <Card
             key={item.id}
             id={item.id}
@@ -42,8 +41,8 @@ const Wrapper = styled.div`
     content: "";
     flex: auto;
   }
-@media (min-width: 1237px) {
-  max-width: 1180px;
+  @media (min-width: 1237px) {
+    max-width: 1180px;
   }
 
   @media (max-width: 942px) {
@@ -64,14 +63,13 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 0 0 0 .75vw;
+    padding: 0 0 0 0.75vw;
   }
 
   @media (max-width: 460px) {
     padding: 0;
 
-
-    img{
+    img {
       height: auto;
       max-height: unset;
     }
@@ -82,6 +80,4 @@ const Wrapper = styled.div`
       margin-bottom: 45px;
     }
   }
-  
 `;
-

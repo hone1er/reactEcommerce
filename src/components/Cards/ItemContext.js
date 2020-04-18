@@ -13,6 +13,16 @@ export const ItemProvider = (props) => {
 
   const [cart, setCart] = useState({ total: 0, qty: 0 });
 
+  const uniqueCategories = {};
+  for (let i = 0; i < items.length; i++) {
+    if (!uniqueCategories[items[i].category]) {
+      uniqueCategories[items[i].category] = true;
+    }
+  }
+
+  // eslint-disable-next-line
+  const [categories, setCategories] = useState(Object.keys(uniqueCategories));
+
   useEffect(() => {
     const itemsInCart = items.filter((el) => {
       return el.qty > 0;
@@ -52,8 +62,6 @@ export const ItemProvider = (props) => {
     setCart({ total: total, qty: totalQuantity() });
   }, [items]);
 
-
-
   useEffect(() => {
     localStorage.setItem("detail", JSON.stringify(detail));
     localStorage.setItem("items", JSON.stringify(items));
@@ -82,12 +90,11 @@ export const ItemProvider = (props) => {
     setItems(tempItems);
   };
 
-
   const removeItem = (id) => {
     let tempCart = [...items];
     const index = tempCart.indexOf(getItem(id));
     const item = tempCart[index];
-    item.qty -= 1
+    item.qty -= 1;
     if (item.qty <= 0) {
       item.inCart = false;
     }
@@ -103,7 +110,8 @@ export const ItemProvider = (props) => {
         removeItem,
         handleDetail,
         detail,
-        cart
+        cart,
+        categories,
       }}
     >
       {props.children}

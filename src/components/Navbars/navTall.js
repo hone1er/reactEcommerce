@@ -1,89 +1,79 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Dropdown from "./dropDown";
 import { TiShoppingCart } from "react-icons/ti";
+import { ItemContext } from "../Cards/ItemContext";
 
-export default class Nav extends React.Component {
-  state = {
-    toggle: false,
-  };
-  Toggle = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
-  render() {
-    return (
-      <>
-        <StyledNav
-          as="nav"
-          fixed={this.props.fixed}
-          sticky={this.props.sticky}
-          position={this.props.position}
-        >
-          <Container>
-            <TopNav>
-              <StyledLink to="/">LOGO</StyledLink>
-              <StyledUl as="ul">
-                <li>
-                  <StyledLink onClick={this.Toggle} to="/cart">
-                    <TiShoppingCart />
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink onClick={this.Toggle} to="#">
-                    sign-in
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink
-                    className="get-started"
-                    onClick={this.Toggle}
-                    to="#"
-                  >
-                    get started
-                  </StyledLink>
-                </li>
-              </StyledUl>
-            </TopNav>
-          </Container>
+export default function Nav(props) {
+  const [toggle, setToggle] = useState({ toggle: false });
+  const { categories } = useContext(ItemContext);
 
-          <Container id="bottom">
-            <BottomNav>
-              <LowerUl as="ul">
-                <li>
-                  <StyledLink onClick={this.Toggle} to="/products/tshirts">
-                    t-shirts
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink onClick={this.Toggle} to="/products/pants">
-                    pants
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink onClick={this.Toggle} to="/products/sweatshirt">
-                    sweatshirts/hoodies
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink onClick={this.Toggle} to="#">
-                    <Dropdown
-                      main={["more...", "more href"]}
-                      links={[
-                        ["link1", "link href"],
-                        ["link2", "link2 href"],
-                        ["link3", "link3 href"],
-                      ]}
-                    />
-                  </StyledLink>
-                </li>
-              </LowerUl>
-            </BottomNav>
-          </Container>
-        </StyledNav>
-      </>
-    );
+  function handleToggle() {
+    setToggle({ toggle: !toggle });
   }
+
+  const categoryList = categories.slice(0, 3).map((category) => {
+    const url = `/products/${category}`;
+    return (
+      <li key={category}>
+        <StyledLink  onClick={handleToggle} to={url}>
+          {category}
+        </StyledLink>
+      </li>
+    );
+  });
+
+  return (
+    <>
+      <StyledNav
+        as="nav"
+        fixed={props.fixed}
+        sticky={props.sticky}
+        position={props.position}
+      >
+        <Container>
+          <TopNav>
+            <StyledLink to="/">LOGO</StyledLink>
+            <StyledUl as="ul">
+              <li>
+                <StyledLink onClick={handleToggle} to="/cart">
+                  <TiShoppingCart />
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink onClick={handleToggle} to="#">
+                  sign-in
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink
+                  className="get-started"
+                  onClick={handleToggle}
+                  to="#"
+                >
+                  get started
+                </StyledLink>
+              </li>
+            </StyledUl>
+          </TopNav>
+        </Container>
+
+        <Container id="bottom">
+          <BottomNav>
+            <LowerUl as="ul">
+              {categoryList}
+              <li>
+                <StyledLink onClick={handleToggle} as="div">
+                  <Dropdown main={["more...", "more href"]} />
+                </StyledLink>
+              </li>
+            </LowerUl>
+          </BottomNav>
+        </Container>
+      </StyledNav>
+    </>
+  );
 }
 
 //  Theme Variables
@@ -169,4 +159,6 @@ const LowerUl = styled(StyledUl)`
 const BottomNav = styled(TopNav)`
   max-width: 1325px;
   align-items: center;
+  text-transform: capitalize;
+  font-size: 1.25rem;
 `;
