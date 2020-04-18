@@ -111,7 +111,7 @@ const Container = styled.div`
     font-size: 2.5rem;
     color: ${(props) => props.theme.main || theme.main};
     margin-bottom: 0;
-    background-color: ${(props) => props.theme.secondary + "45" || theme.secondary};
+    background-color: ${(props) => props.theme.secondary + "75" || theme.secondary};
     padding: ${(props) => props.title ? "5px 10px" : 0};
     margin-bottom: 5px;
   }
@@ -119,7 +119,7 @@ const Container = styled.div`
   h4 {
     font-size: 0.9rem;
     margin-top: 0;
-    background-color: ${(props) => props.theme.main + "45"};
+    background-color: ${(props) => props.theme.main + "75"};
     color: ${(props) => props.theme.secondary || theme.secondary};
     padding: ${(props) => props.subtitle ? "5px 10px" : 0};
 

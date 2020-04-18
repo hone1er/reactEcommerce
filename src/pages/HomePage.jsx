@@ -9,9 +9,10 @@ function HomePage() {
         href="/tshirts"
         title="benal"
         subtitle="make sure you support local artist, stupid"
-        alignment="flex-start"
+        alignment="center"
         theme={{ main: "#444444", secondary: "#e3e3e3" }}
         displayButton="true"
+        image="https://source.unsplash.com/random/800x600"
       />
     </div>
   );

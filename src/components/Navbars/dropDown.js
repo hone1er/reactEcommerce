@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { ItemContext } from "../Cards/ItemContext";
 
 // Usage
-//
-// <Dropdown main={["menu", "menu href"]} links={[["Link1", "link1 href"], ["Link2", "link2 href"]]} />
+
+// <Dropdown main={["menu name", "menu href"]}  />
 export default function Dropdown(props) {
   const { categories, handleToggle } = useContext(ItemContext);
   const moreList = categories.slice(3).map((category) => {
