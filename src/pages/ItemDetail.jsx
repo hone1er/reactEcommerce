@@ -21,9 +21,8 @@ const ItemDetail = () => {
               <b>{detail.header}</b>
             </h2>
             <p>{detail.subtitle}</p>
-            <p className="sub">${detail.price}</p>
-          </div>
           <p>{detail.description}</p>
+          <p className="sub">${detail.price}</p>
           <ButtonContainer
             inCart={detail.inCart}
             disabled={detail.inCart}
@@ -33,6 +32,7 @@ const ItemDetail = () => {
           >
             add to cart
           </ButtonContainer>
+          </div>
         </Description>
       </StyledDiv>
     </>

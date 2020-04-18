@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Hero from "../components/Hero/heroStandard";
 
-function App() {
+function HomePage() {
   return (
     <div className="App">
       <Hero
@@ -10,11 +10,11 @@ function App() {
         title="benal"
         subtitle="make sure you support local artist, stupid"
         alignment="flex-start"
-        theme={{ main: "black", secondary: "white" }}
+        theme={{ main: "#444444", secondary: "#e3e3e3" }}
         displayButton="true"
       />
     </div>
   );
 }
 
-export default App;
+export default HomePage;

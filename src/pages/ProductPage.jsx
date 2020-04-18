@@ -27,7 +27,7 @@ export default function ProductPage(props) {
         title={title}
         subtitle={subtitle}
         alignment="flex-start"
-        theme={{ main: "black", secondary: "white" }}
+        theme={{ main:"#444444", secondary: "#f8f8f8" }}
         displayButton="false"
         className="bubble"
       />
@@ -42,7 +42,7 @@ export default function ProductPage(props) {
         backgroundSize="contain"
         title="words about clothing being cool"
         subtitle="buying things makes you feel good"
-        theme={{ main: "black", secondary: "white" }}
+        theme={{ main: "#444444", secondary: "#f8f8f8" }}
         displayButton="true"
         buttonName="feeling lucky"
         alignment="center"

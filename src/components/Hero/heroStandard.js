@@ -9,10 +9,10 @@ import { ItemContext } from "../Cards/ItemContext";
 //  Theme Variables
 const theme = {
   // text theme
-  main: "black",
+  main: "#444",
   secondary: "black",
   //  button theme
-  fg: "black",
+  fg: "#444",
   bg: "white",
   backgroundImage: image,
 };
@@ -55,7 +55,7 @@ const Hero = (props) => {
   return (
     <OuterHero>
       <ThemeProvider theme={props.theme || theme}>
-        <Container alignment={props.alignment || "center"} image={props.image}>
+        <Container alignment={props.alignment || "center"} image={props.image} title={props.title} subtitle={props.subtitle}>
           <h1>{props.title}</h1>
           <h4>{props.subtitle}</h4>
           <Link
@@ -81,6 +81,10 @@ const OuterHero = styled.div`
   justify-content: center;
   align-content: center;
   margin: 50px 0 0;
+
+  @media (max-width: 768px) {
+    margin: 115px 0 0;
+  }
 `;
 
 const Container = styled.div`
@@ -107,13 +111,20 @@ const Container = styled.div`
     font-size: 2.5rem;
     color: ${(props) => props.theme.main || theme.main};
     margin-bottom: 0;
+    background-color: ${(props) => props.theme.secondary + "45" || theme.secondary};
+    padding: ${(props) => props.title ? "5px 10px" : 0};
+    margin-bottom: 5px;
   }
 
   h4 {
     font-size: 0.9rem;
     margin-top: 0;
+    background-color: ${(props) => props.theme.main + "45"};
+    color: ${(props) => props.theme.secondary || theme.secondary};
+    padding: ${(props) => props.subtitle ? "5px 10px" : 0};
+
   }
-  color: ${(props) => props.theme.secondary || theme.secondary};
+
 
   a {
     display: flex;
@@ -140,8 +151,6 @@ const Container = styled.div`
   @media (max-width: 1236px) {
     width: 765px;
   }
-
- 
 
   @media (max-width: 646px) {
     width: 100%;

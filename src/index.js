@@ -1,27 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./pages/App";
 import { ItemProvider } from "./components/Cards/ItemContext";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import Nav from "./components/Navbars/navTall";
 import NavMobile from "./components/Navbars/nav";
-import ItemDetail from "./pages/ItemDetail";
-import ProductPage from "./pages/ProductPage";
-import Cart from "./pages/Cart";
-
+import HomePage from "./pages/HomePage.jsx";
+import ItemDetail from "./pages/ItemDetail.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
+import Cart from "./pages/Cart.jsx";
+import App from "./pages/App.jsx";
 ReactDOM.render(
   <Router>
     <Nav className="nav" sticky />
     <NavMobile className="nav-mobile" />
     <ItemProvider>
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={HomePage} />
       <Route path="/details" component={ItemDetail} />
-      <Route path="/products/:category" render={(props)=>{
-        return(
-    <ProductPage category={props.match.params.category} {...props}/>)
-}} />
+      <Route path="/checkout" component={App} />
+      <Route
+        path="/products/:category"
+        render={(props) => {
+          return (
+            <ProductPage category={props.match.params.category} {...props} />
+          );
+        }}
+      />
       <Route path="/cart" component={Cart} />
     </ItemProvider>
   </Router>,

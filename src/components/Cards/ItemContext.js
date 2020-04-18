@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { storeItems } from "./Items";
 
 export const ItemContext = React.createContext();
@@ -11,8 +11,50 @@ export const ItemProvider = (props) => {
     JSON.parse(localStorage.getItem("detail")) || " "
   );
 
+  const [cart, setCart] = useState({ total: 0, qty: 0 });
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const itemsInCart = items.filter((el) => {
+      return el.qty > 0;
+    });
+
+    function totalQuantity() {
+      return getQuantity(items) === 1
+        ? `${getQuantity(items)} item`
+        : `${getQuantity(items)} items`;
+    }
+
+    function getQuantity() {
+      if (itemsInCart.length) {
+        return itemsInCart
+          .map((item) => {
+            return item.qty;
+          })
+          .reduce((acc, val) => {
+            return (acc += val);
+          });
+      }
+      return 0;
+    }
+
+    const total =
+      itemsInCart.length > 0
+        ? itemsInCart
+            .map((item) => {
+              return item.price * item.qty;
+            })
+            .reduce((acc, val) => {
+              return (acc += val);
+            })
+            .toFixed(2)
+        : 0;
+
+    setCart({ total: total, qty: totalQuantity() });
+  }, [items]);
+
+
+
+  useEffect(() => {
     localStorage.setItem("detail", JSON.stringify(detail));
     localStorage.setItem("items", JSON.stringify(items));
   }, [detail, items]);
@@ -61,6 +103,7 @@ export const ItemProvider = (props) => {
         removeItem,
         handleDetail,
         detail,
+        cart
       }}
     >
       {props.children}

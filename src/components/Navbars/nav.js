@@ -117,7 +117,7 @@ const NavOuter = styled.div`
   height: ${(props) =>
     props.className === "nav-bar" ? "max-content" : "auto"};
   border-radius: 0;
-  position: sticky;
+  position: fixed;
   z-index: 1;
 
   @media (max-width: 768px) {

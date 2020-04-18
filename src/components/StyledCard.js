@@ -49,7 +49,7 @@ const StyledCard = styled.div`
   }
 
   &#card-detail {
-    width: 98%;
+    width: 50%;
     background: #f5f5f5;
     border: 2px solid #e1e1e1;
     justify-content: space-around;
@@ -65,12 +65,7 @@ const StyledCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    &#card-detail {
-      width: fit-content;
-      margin: 30px;
-      border: none;
-      background: inherit;
-    }
+    
 
     .cartCardInfo {
       width: 100%;
@@ -91,7 +86,13 @@ const StyledCard = styled.div`
     width: 260px;
     min-width: 260px;
     margin: 10px 10px;
+
+    
     &#card-detail {
+      width: 100%;
+      margin: 30px;
+      border: none;
+      background: inherit;
     }
   }
 
@@ -99,8 +100,7 @@ const StyledCard = styled.div`
     width: 230px;
     min-width: 230px;
     margin: 10px 5px;
-    &#card-detail {
-    }
+    
   }
 
   @media (max-width: 480px) {
@@ -113,7 +113,7 @@ const StyledCard = styled.div`
     .detail-img {
       width: 100%;
       max-width: 100%;
-      min-width: 70vw;
+      min-width: 75vw;
     }
     &.cart-item {
       max-width: 100% !important;

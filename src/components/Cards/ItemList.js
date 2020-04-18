@@ -69,17 +69,16 @@ const Wrapper = styled.div`
 
   @media (max-width: 460px) {
     padding: 0;
-  }
 
-  @media (max-width: 339px) {
 
     img{
       height: auto;
       max-height: unset;
     }
     .cardBox {
-      max-width: 100%;
-      width: 100%;
+      margin: auto;
+      max-width: 99%;
+      width: 99%;
       margin-bottom: 45px;
     }
   }
