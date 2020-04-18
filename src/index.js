@@ -13,14 +13,14 @@ import Cart from "./pages/Cart.jsx";
 import App from "./pages/App.jsx";
 ReactDOM.render(
   <Router>
+    <ItemProvider>
     <Nav className="nav" sticky />
     <NavMobile className="nav-mobile" />
-    <ItemProvider>
       <Route exact path="/" component={HomePage} />
       <Route path="/details" component={ItemDetail} />
       <Route path="/checkout" component={App} />
       <Route
-        path="/products/:category"
+        exact path="/products/:category"
         render={(props) => {
           return (
             <ProductPage category={props.match.params.category} {...props} />
