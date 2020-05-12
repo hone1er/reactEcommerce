@@ -12,7 +12,7 @@ export default function Dropdown(props) {
     const url = `/products/${category}`;
     return (
       <Link key={url} onClick={handleToggle} to={url}>
-        {category}
+        <p>{category}</p>
       </Link>
     );
   });
@@ -32,7 +32,7 @@ const DropdownContainer = styled.div`
 
   a {
     text-decoration: none !important;
-    color: white;
+    color: ${props => props.theme.secondary};
     padding: 9px 0;
   }
   &:hover > .dropdown {
@@ -47,14 +47,21 @@ const DropdownDiv = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
-  background: black;
-  width: fit-content;
-
+  background: ${props => props.theme.secondary};
+  width: 300px;
+  p {
+    scale: 1;
+  }
   a {
-    margin: 15px;
-    color: white !important;
+    padding: 1.3rem 0;
+    color: ${props => props.theme.main} !important;
+    width: 100%;
     &:hover {
-      color: #33b1ff !important;
+  background: ${props => props.theme.secondary };
+  box-shadow: 0 0 20px -10px;
+    }
+    &:hover > p {
+      scale: 1.2
     }
   }
   &:hover {
@@ -64,11 +71,12 @@ const DropdownDiv = styled.div`
     content: " ";
     width: 15px;
     height: 15px;
-    background: black;
-    color: white;
+    background: ${props => props.theme.secondary};
+    color: ${props => props.theme.main};
     position: relative;
     top: -5px;
     border-radius: 2px;
     transform: rotate(45deg);
+    z-index: -1;
   }
 `;

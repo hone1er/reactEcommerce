@@ -4,16 +4,15 @@ export const ButtonContainer = styled.button`
   width: max-content;
   text-transform: capitalize;
   font-size: 1.4rem;
-  background: transparent;
   border: 0.05rem solid var(--lightBlue);
-  border-color: ${props =>
-    props.inCart ? "var(--mainYellow)" : "var(--lightBlue)"};
+  border-color:${props => (!props.inCart ? props.theme.main: props.theme.main)};
+  background-color:${props => (!props.inCart ? props.theme.main: props.theme.secondary)};
   color: var(--lightBlue);
-  color: ${props => (props.inCart ? "var(--mainYellow)" : "var(--lightBlue)")};
+  color: ${props => (!props.inCart ? props.theme.secondary: props.theme.main)};
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   outline-color: red;
-  cursor: pointer;
+  cursor: ${props => (props.inCart ? "normal": "pointer")};
   display: inline-block;
   margin: 0.2rem 0.5rem 0.2rem 0;
   transition: all 0.5s ease-in-out;
@@ -26,10 +25,8 @@ export const ButtonContainer = styled.button`
   }
 
   &:hover {
-    background: var(--lightBlue);
-    background: ${props =>
-      props.inCart ? "var(--mainYellow)" : "var(--lightBlue)"};
-    color: var(--mainBlue);
+    color: ${props => (!props.inCart ? props.theme.main: props.theme.main)};
+    background: ${props => (!props.inCart ? props.theme.secondary: props.theme.secondary)};
     cursor: ${props => (props.inCart ? "normal" : "pointer")};
   }
   &:focus {

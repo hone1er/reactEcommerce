@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 import { ItemContext } from "../Cards/ItemContext";
 import Dropdown from "./dropDown";
-export default function NavMobile() {
+
+export default function NavMobile(props) {
   const [toggle, setToggle] = useState(false);
   const { categories } = useContext(ItemContext);
 
@@ -37,11 +38,11 @@ export default function NavMobile() {
               id="logo-link"
               to="/"
             >
-              <h1>logo</h1>
+              <h1>Benal</h1>
             </Li>
             <MenuDiv>
               <Li
-                className="no-hover"
+                className="no-hover shopping-cart"
                 to="/cart"
                 onClick={
                   toggle
@@ -51,7 +52,7 @@ export default function NavMobile() {
                       }
                 }
               >
-                <TiShoppingCart />
+                <TiShoppingCart className="shopping-cart" />
               </Li>
 
               <Button
@@ -85,34 +86,27 @@ export default function NavMobile() {
               </Button>
             </MenuDiv>
           </LogoDiv>
+        </NavOuter>
           <NavList className={toggle ? "nav-links show-nav" : "nav-links"}>
+            <Button className="mobile-nav-x"onClick={handleToggle}>X</Button>
             <Li onClick={handleToggle} to="/">
               Home
             </Li>
             {categoryList}
             <Dropdown main={["more...", "menuHref"]} />
           </NavList>
-        </NavOuter>
       </div>
     </>
   );
 }
 
-//  Theme Variables
-const theme = {
-  main: "#444",
-  secondary: "#f8f8f8",
-  borderRadius: "0",
-};
-
 const NavOuter = styled.div`
   display: none;
-  background-color: ${theme.main};
+  background-color: ${props => props.theme.main};
   width: ${(props) => (props.className === "nav-bar" ? "max-content" : "100%")};
   min-width: max-content;
   top: 0;
-  height: ${(props) =>
-    props.className === "nav-bar" ? "max-content" : "auto"};
+  height: auto;
   border-radius: 0;
   position: fixed;
   z-index: 1;
@@ -123,37 +117,73 @@ const NavOuter = styled.div`
     text-align: right;
     text-align: -webkit-right;
   }
+
+  img {
+    max-width: 90px;
+    scale: 1;
+    &:hover{
+      scale: 1.2;
+    }
+  }
 `;
 
 const NavList = styled.ul`
-  display: ${(props) => (props.className === "nav-links" ? "none" : "flex")};
+  display: flex;
   flex-direction: column;
   justify-content: center;
   alignt-items: center;
   list-style: none;
-  padding: 0;
+  padding: 0 0 2rem;
+  transition: transform 200ms;
+  background: ${props => props.theme.main};
+  color: ${props => props.theme.secondary};
+  transform: ${(props) => (props.className === "nav-links show-nav" ? "translate(0, 0)" : "translate(250vw, 0)")};
+position: absolute;
+top: 0;
+z-index: 1000;
+width: 100%;
+
+a{
+  scale: 1;
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+
+.mobile-nav-x {
+  align-self: flex-end;
+  color: ${props => props.theme.secondary};
+  scale: 2;
+  margin-bottom: 2rem;
+
+  &:hover {
+    scale: 2.2
+  }
+}
 `;
 
 const LogoDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px 25px;
-  color: ${theme.secondary};
+  padding: 0x 10px;
+  color: ${props => props.theme.secondary};
 `;
 const Button = styled.button`
   display: flex;
-  width: 75px;
+  width: 55px;
   justify-content: space-around;
   padding: 10px;
   border-radius: 0;
-  background: #444;
+  background: ${props => props.theme.main};
   border: none;
   height: fit-content;
   align-self: center;
   align-items: center;
-
+  cursor: pointer;
   svg {
-    fill: white;
+    fill: ${props => props.theme.secondary};
+    background: ${props => props.theme.main};
   }
 `;
 
@@ -165,20 +195,28 @@ const Li = styled(Link)`
   font-size: 1.5em;
   text-decoration: none;
   text-transform: capitalize;
-  color: ${theme.secondary};
-  &:hover {
-    background: ${theme.secondary};
-    color: ${theme.main};
-  }
+  color: ${props => props.theme.secondary};
+  // &:hover {
+  //   background: ${props => props.theme.secondary};
+  //   color: ${props => props.theme.main};
+  // }
 
   &#logo-link {
     h1 {
-      margin: 0;
+      margin: 0 10px;
     }
   }
   &.no-hover:hover {
-    background: ${theme.main};
-    color: ${theme.secondary};
+    background: ${props => props.theme.main};
+    color: ${props => props.theme.secondary};
+  }
+
+  &.shopping-cart {
+    position: relative;
+    right: 2rem;
+  }
+  .shopping-cart {
+    scale: 1.4;
   }
 `;
 

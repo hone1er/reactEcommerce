@@ -7,8 +7,9 @@ import StyledCard from "../components/StyledCard";
 import Description from "../components/Description";
 
 const ItemDetail = () => {
-  // eslint-disable-next-line
-  const { addItem, detail, cart } = useContext(ItemContext);
+  const { addItem, detail } = useContext(ItemContext);
+  const buttonText = detail.inCart ? "in cart" : "add to cart";
+
   return (
     <>
       <StyledDiv className="detail">
@@ -18,7 +19,7 @@ const ItemDetail = () => {
         <Description id="detail-page">
           <div className="cardInfo">
             <h2>
-              <b>{detail.header}</b>
+              {detail.header}
             </h2>
             <p>{detail.subtitle}</p>
           <p>{detail.description}</p>
@@ -30,7 +31,7 @@ const ItemDetail = () => {
               addItem(detail.id);
             }}
           >
-            add to cart
+            { buttonText }
           </ButtonContainer>
           </div>
         </Description>

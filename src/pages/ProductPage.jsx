@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import Hero from "../components/Hero/heroStandard";
 import ItemList from "../components/Cards/ItemList";
-import image from "../components/Hero/mnz--CcIA7IJorU-unsplash.jpg";
-import image2 from "../components/Hero/mnz-m1m2EZOZVwA-unsplash.jpg";
-import clothingImage from "../components/Hero/artificial-photography-vB5qtt8X4NA-unsplash.jpg";
+import image from "../components/Hero/images/mnz--CcIA7IJorU-unsplash.jpg";
+import image2 from "../components/Hero/images/mnz-m1m2EZOZVwA-unsplash.jpg";
+import clothingImage from "../components/Hero/images/artificial-photography-vB5qtt8X4NA-unsplash.jpg";
 
 import { ItemContext } from "../components/Cards/ItemContext";
 

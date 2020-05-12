@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Dropdown from "./dropDown";
 import { TiShoppingCart } from "react-icons/ti";
 import { ItemContext } from "../Cards/ItemContext";
-
 export default function Nav(props) {
   const [toggle, setToggle] = useState({ toggle: false });
   const { categories } = useContext(ItemContext);
@@ -17,7 +16,7 @@ export default function Nav(props) {
     const url = `/products/${category}`;
     return (
       <li key={category}>
-        <StyledLink  onClick={handleToggle} to={url}>
+        <StyledLink onClick={handleToggle} to={url}>
           {category}
         </StyledLink>
       </li>
@@ -34,7 +33,7 @@ export default function Nav(props) {
       >
         <Container>
           <TopNav>
-            <StyledLink to="/">LOGO</StyledLink>
+  <StyledLink to="/"><h1>Benal</h1></StyledLink>
             <StyledUl as="ul">
               <li>
                 <StyledLink onClick={handleToggle} to="/cart">
@@ -76,20 +75,15 @@ export default function Nav(props) {
   );
 }
 
-//  Theme Variables
-const theme = {
-  main: "#444",
-  secondary: "#f8f8f8",
-  borderRadius: "0",
-};
+
 
 const StyledNav = styled.div`
       width: 100%;
       height 120px;
       margin: 0;
       padding: 0;
-      background: ${(props) => props.theme.main || theme.main};
-      background: ${(props) => props.theme.main || theme.main};
+      background: ${(props) => props.theme.main};
+      background: ${(props) => props.theme.main};
       position: ${(props) =>
         props.fixed ? "fixed" : props.sticky ? "sticky" : props.position};
       top: 0;
@@ -102,11 +96,11 @@ const StyledNav = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.theme.secondary || theme.secondary};
+  color: ${(props) => props.theme.secondary};
   &.get-started {
     display: flex;
     align-items: center;
-    border: 1px solid ${(props) => props.theme.secondary || theme.secondary};
+    border: 1px solid ${(props) => props.theme.secondary};
     padding: 10px;
     border-radius: 8px;
     text-transform: capitalize;
@@ -118,6 +112,8 @@ const StyledLink = styled(Link)`
     position: relative;
     top: 5px;
   }
+
+
 `;
 
 const Container = styled.div`
@@ -125,9 +121,19 @@ const Container = styled.div`
   height: auto;
   text-align: center;
   border-bottom: 1px solid
-    ${(props) => props.theme.secondary || theme.secondary};
+    ${(props) => props.theme.secondary};
   &#bottom {
     border-bottom: none;
+  }
+
+  img {
+    max-width: 90px;
+    height; 90px;
+    scale: 1;
+
+    &:hover {
+      scale: 1.2;
+    }
   }
 `;
 
@@ -154,6 +160,13 @@ const LowerUl = styled(StyledUl)`
   width: 100%;
   justify-content: space-evenly;
   margin: auto;
+
+  li {
+    scale: 1;
+    &:hover {
+      scale: 1.1;
+    }
+  }
 `;
 
 const BottomNav = styled(TopNav)`

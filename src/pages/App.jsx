@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import { CreditCard } from "react-kawaii";
+
 import {
   CardElement,
   Elements,
@@ -8,11 +10,39 @@ import {
 } from "@stripe/react-stripe-js";
 import "./Checkout.scss";
 import { ItemContext } from "../components/Cards/ItemContext";
+import { useState } from "react";
 
 const CheckoutForm = () => {
   const { cart } = useContext(ItemContext);
   const stripe = useStripe();
   const elements = useElements();
+
+  const [face, setFace] = useState("happy");
+  const [customer, setCustomer] = useState({
+    name: "",
+    address: "",
+    zipcode: "",
+    phone: "",
+    email: "",
+  });
+
+  function handleChange(e) {
+    setCustomer({ ...customer, [e.target.name]: e.target.value });
+  }
+
+  function handleFace() {
+    let face;
+    for (let i = 0; i < Object.keys(customer); i++) {
+      console.log(Object.values(customer)[i]);
+      if (Object.values(customer)[i] === "") {
+        face = "sad";
+        return;
+      }
+
+      face = "blissful";
+    }
+    return face;
+  }
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -37,42 +67,87 @@ const CheckoutForm = () => {
 
     if (error) {
       console.log("[error]", error);
+      setFace("shocked");
     } else {
       console.log("[PaymentMethod]", paymentMethod);
+      setFace("blissful");
     }
   };
 
   return (
-    <form className="checkout" onSubmit={handleSubmit}>
-      <row>
-        <input name="name" placeholder="Full name"></input>
-        <input name="address" placeholder="Address"></input>
-        <input name="zipcode" placeholder="Zipcode"></input>
-        <input name="email" placeholder="Email"></input>
-        <input name="phone" placeholder="Phone number"></input>
-
-      </row>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              color: "#424770",
-              "::placeholder": {
-                color: "#aab7c4",
+    <>
+      <form className="checkout" onSubmit={handleSubmit}>
+        <row>
+          <input
+            name="name"
+            placeholder="Full name"
+            value={customer.name}
+            onChange={handleChange}
+          />
+          <input
+            name="address"
+            placeholder="Address"
+            value={customer.address}
+            onChange={handleChange}
+          />{" "}
+          <input
+            name="zipcode"
+            placeholder="Zipcode"
+            value={customer.zipcode}
+            onChange={handleChange}
+          />
+          <input
+            name="email"
+            placeholder="Email"
+            value={customer.email}
+            onChange={handleChange}
+          />
+          <input
+            name="phone"
+            placeholder="Phone number"
+            value={customer.phone}
+            onChange={handleChange}
+          />
+        </row>
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
               },
             },
-            invalid: {
-              color: "#9e2146",
-            },
-          },
-          hidePostalCode: true
-        }}
-      />
-      <button type="submit" disabled={!stripe}>
-        Pay ${cart.total}
-      </button>
-    </form>
+            hidePostalCode: true,
+          }}
+        />
+        <button
+          type="submit"
+          disabled={
+            !stripe ||
+            (!customer.name ||
+              !customer.address ||
+              !customer.zipcode ||
+              !customer.email ||
+              !customer.phone)
+          }
+          onClick={handleFace}
+        >
+          Pay ${cart.total}
+        </button>
+        <CreditCard
+          className="cardSVG"
+          size={200}
+          mood={face}
+          color="#83D1FB"
+        />
+      </form>
+    </>
   );
 };
 

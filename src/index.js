@@ -11,11 +11,18 @@ import ItemDetail from "./pages/ItemDetail.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./pages/Cart.jsx";
 import App from "./pages/App.jsx";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  main: "#333333",
+  secondary: "#f8f8f8",
+}
 ReactDOM.render(
   <Router>
     <ItemProvider>
-    <Nav className="nav" sticky />
-    <NavMobile className="nav-mobile" />
+      <ThemeProvider theme={theme}>
+    <Nav className="nav" sticky theme={{main: "blue", secondary: "red"}} />
+    <NavMobile className="nav-mobile"/>
       <Route exact path="/" component={HomePage} />
       <Route path="/details" component={ItemDetail} />
       <Route path="/checkout" component={App} />
@@ -28,6 +35,7 @@ ReactDOM.render(
         }}
       />
       <Route path="/cart" component={Cart} />
+    </ThemeProvider>
     </ItemProvider>
   </Router>,
   document.getElementById("root")

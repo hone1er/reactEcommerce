@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { storeItems } from "./Items";
+import { storeItems } from "../Items";
 
 export const ItemContext = React.createContext();
 
@@ -95,6 +95,7 @@ export const ItemProvider = (props) => {
     const index = tempCart.indexOf(getItem(id));
     const item = tempCart[index];
     item.qty -= 1;
+    item.stock += 1;
     if (item.qty <= 0) {
       item.inCart = false;
     }

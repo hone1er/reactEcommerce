@@ -1,23 +1,23 @@
-import img2 from "./tshirts/woman-standing-in-dim-lighted-room-1408183.jpg";
-import image from "./tshirts/agustin-vera-T3vUJMUv7J4-unsplash.jpg";
-import img3 from "./tshirts/josue-escoto-crsQ7CNIovw-unsplash.jpg";
-import img4 from "./tshirts/sincerely-media-9ShY-Tq70Mc-unsplash.jpg";
-import img5 from "./tshirts/sharon-mccutcheon-wx3JOq0Xbh4-unsplash.jpg";
-import img6 from "./tshirts/mitya-abrosimov-HgODkVpl1lU-unsplash.jpg";
-import img7 from "./tshirts/marcel-j-uWrCdB5sM-unsplash.jpg";
-import img8 from "./tshirts/ian-dooley-8HqPXTToMn0-unsplash.jpg";
-import pantsimg from "./pants/alicia-petresc-BciCcl8tjVU-unsplash.jpg";
-import pantsimg1 from "./pants/brian-wangenheim-Tg6rUjg6q8g-unsplash.jpg";
-import pantsimg2 from "./pants/ivan-bogdanov-17qC7l19hMI-unsplash.jpg";
-// import sweatshirtImg from "./sweatshirts/alex-ware-l0MNYcFg5wI-unsplash.jpg";
-import sweatshirtImg1 from "./sweatshirts/mohammed-hassan-TacgBR6o0TQ-unsplash.jpg";
+import img2 from "./Cards/tshirts/woman-standing-in-dim-lighted-room-1408183.jpg";
+import image from "./Cards/tshirts/agustin-vera-T3vUJMUv7J4-unsplash.jpg";
+import img3 from "./Cards/tshirts/josue-escoto-crsQ7CNIovw-unsplash.jpg";
+import img4 from "./Cards/tshirts/sincerely-media-9ShY-Tq70Mc-unsplash.jpg";
+import img5 from "./Cards/tshirts/sharon-mccutcheon-wx3JOq0Xbh4-unsplash.jpg";
+import img6 from "./Cards/tshirts/mitya-abrosimov-HgODkVpl1lU-unsplash.jpg";
+import img7 from "./Cards/tshirts/marcel-j-uWrCdB5sM-unsplash.jpg";
+import img8 from "./Cards/tshirts/ian-dooley-8HqPXTToMn0-unsplash.jpg";
+import pantsimg from "./Cards/pants/alicia-petresc-BciCcl8tjVU-unsplash.jpg";
+import pantsimg1 from "./Cards/pants/brian-wangenheim-Tg6rUjg6q8g-unsplash.jpg";
+import pantsimg2 from "./Cards/pants/ivan-bogdanov-17qC7l19hMI-unsplash.jpg";
+// import sweatshirtImg from "./Cards/sweatshirts/alex-ware-l0MNYcFg5wI-unsplash.jpg";
+import sweatshirtImg1 from "./Cards/sweatshirts/mohammed-hassan-TacgBR6o0TQ-unsplash.jpg";
 // import sweatshirtImg2 from "./sweatshirts/leon-macapagal-IsFF7pqNFLo-unsplash.jpg";
-import sweatshirtImg3 from "./sweatshirts/troy-t-chSaT-2pGFs-unsplash.jpg";
-import sweatshirtImg4 from "./sweatshirts/rico-cori-eIjEDkRzbOQ-unsplash.jpg";
-import sweatshirtImg5 from "./sweatshirts/shraddha-singh-iaUeG7vJw9s-unsplash.jpg";
-import sweatshirtImg6 from "./sweatshirts/sincerely-media-rI0OiRBx4ac-unsplash.jpg";
+import sweatshirtImg3 from "./Cards/sweatshirts/troy-t-chSaT-2pGFs-unsplash.jpg";
+import sweatshirtImg4 from "./Cards/sweatshirts/rico-cori-eIjEDkRzbOQ-unsplash.jpg";
+import sweatshirtImg5 from "./Cards/sweatshirts/shraddha-singh-iaUeG7vJw9s-unsplash.jpg";
+import sweatshirtImg6 from "./Cards/sweatshirts/sincerely-media-rI0OiRBx4ac-unsplash.jpg";
 
-import pantsimg3 from "./pants/silviu-beniamin-tofan-spqwdZXzduU-unsplash.jpg";
+import pantsimg3 from "./Cards/pants/silviu-beniamin-tofan-spqwdZXzduU-unsplash.jpg";
 export const storeItems = [
   {
     qty: 0,

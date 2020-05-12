@@ -1,21 +1,10 @@
 import React, { useContext } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 //  REPLACE WITH YOUR OWN IMAGE
-import image from "./testImage.jpg";
 import { ItemContext } from "../Cards/ItemContext";
 //
 
-//  Theme Variables
-const theme = {
-  // text theme
-  main: "#444",
-  secondary: "black",
-  //  button theme
-  fg: "#444",
-  bg: "white",
-  backgroundImage: image,
-};
 
 //  props for this component:
 
@@ -54,7 +43,6 @@ const Hero = (props) => {
 
   return (
     <OuterHero>
-      <ThemeProvider theme={props.theme || theme}>
         <Container alignment={props.alignment || "center"} image={props.image} title={props.title} subtitle={props.subtitle}>
           <h1>{props.title}</h1>
           <h4>{props.subtitle}</h4>
@@ -68,7 +56,6 @@ const Hero = (props) => {
             {props.buttonName || "Shop"}
           </Link>
         </Container>
-      </ThemeProvider>
     </OuterHero>
   );
 };
@@ -90,14 +77,15 @@ const OuterHero = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1060px;
+  width: 1360px;
+  max-width: 90%;
   margin: 0 auto;
   height: ${(props) => props.height || "70vh"};
   min-height: 300px;
   background: no-repeat;
   justify-content: ${(props) => props.alignment};
   align-items: ${(props) => props.alignment};
-  background-image: url(${(props) => props.image || theme.backgroundImage});
+  background-image: url(${props =>  props.image });
   padding: 0 50px;
   position: relative;
   overflow: hidden;
@@ -109,9 +97,9 @@ const Container = styled.div`
 
   h1 {
     font-size: 2.5rem;
-    color: ${(props) => props.theme.main || theme.main};
+    color: ${(props) => props.theme.secondary };
     margin-bottom: 0;
-    background-color: ${(props) => props.theme.secondary + "75" || theme.secondary};
+    background-color: ${(props) => props.theme.main + "75"};
     padding: ${(props) => props.title ? "5px 10px" : 0};
     margin-bottom: 5px;
   }
@@ -120,7 +108,7 @@ const Container = styled.div`
     font-size: 0.9rem;
     margin-top: 0;
     background-color: ${(props) => props.theme.main + "75"};
-    color: ${(props) => props.theme.secondary || theme.secondary};
+    color: ${(props) => props.theme.secondary};
     padding: ${(props) => props.subtitle ? "5px 10px" : 0};
 
   }
@@ -132,8 +120,8 @@ const Container = styled.div`
     align-items: center;
     text-decoration: none;
     line-height: 1.5;
-    color: ${(props) => props.theme.fg || theme.fg};
-    background: ${(props) => props.theme.bg || theme.bg};
+    color: ${(props) => props.theme.main};
+    background: ${(props) => props.theme.secondary};
     width: 100%;
     max-width: 100px;
     min-width: 100px;
@@ -146,10 +134,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: fit-content;
-  }
-
-  @media (max-width: 1236px) {
-    width: 765px;
   }
 
   @media (max-width: 646px) {

@@ -6,7 +6,9 @@ import StyledCard from "../components/StyledCard";
 import Description from "../components/Description";
 import { Link } from "react-router-dom";
 function Cart() {
-  const { addItem, removeItem, handleDetail, items, cart } = useContext(ItemContext);
+  const { addItem, removeItem, handleDetail, items, cart } = useContext(
+    ItemContext
+  );
 
   return (
     <>
@@ -48,6 +50,7 @@ function Cart() {
                   <ButtonContainer
                     className="add-sub-item"
                     inCart={detail.inCart}
+                    disabled={detail.stock < 1}
                     onClick={() => {
                       addItem(detail.id);
                     }}

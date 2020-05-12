@@ -30,18 +30,28 @@ const StyledCard = styled.div`
     flex-direction: column;
     text-align: left;
     max-width: 100%;
-    background: ${props => props.theme.secondary};
     color: ${props => props.theme.main};
+    background-color: ${props => props.theme.secodary};
     border-radius: 0 0 ${props => props.theme.borderRadius}
       ${props => props.theme.borderRadius};
     height: 130px;
     justify-content: space-evenly;
+    padding: .25rem 1rem 1rem;
 
     h4,
     h2,
     p {
       margin: 0px;
       padding: 0 5px;
+      letter-spacing: .09rem;
+    }
+    h2{
+      text-transform: capitalize;
+      letter-spacing: .15rem;
+      margin-bottom: -5px;
+    }
+    p {
+      margin-bottom: 5px;
     }
     .sub {
       font-weight: bold;
@@ -52,7 +62,7 @@ const StyledCard = styled.div`
     width: 50%;
     background: #f5f5f5;
     border: 2px solid #e1e1e1;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 5px;
 
     .inner-div {

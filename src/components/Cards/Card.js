@@ -5,6 +5,7 @@ import { ButtonContainer } from "../button";
 import StyledCard from "../StyledCard";
 
 export default function Card(props) {
+  const buttonText = props.inCart ? "in cart" : "add to cart";
   return (
     <>
       <StyledDiv>
@@ -13,14 +14,14 @@ export default function Card(props) {
             id={props.id}
             to={{
               pathname: "/details",
-              myCustomProps: props
+              myCustomProps: props,
             }}
             onClick={() => props.handleDetail(props.id)}
           >
             <img src={props.img} alt="Avatar" />
             <div className="cardInfo">
               <h2>
-                <b>{props.header}</b>
+                {props.header}
               </h2>
               <p>{props.subtitle}</p>
               <p className="sub">${props.price}</p>
@@ -34,7 +35,7 @@ export default function Card(props) {
               props.addItem(props.id);
             }}
           >
-            add to cart
+            {buttonText}
           </ButtonContainer>
         </StyledCard>
 
@@ -43,7 +44,6 @@ export default function Card(props) {
     </>
   );
 }
-
 
 const StyledDiv = styled.div`
   display: flex;
